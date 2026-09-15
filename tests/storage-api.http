@@ -1,0 +1,31 @@
+### API de Armazenamento MinIO - Testes HTTP
+
+# Base URL (ajuste conforme necessário)
+@base_url = http://localhost:3000/api
+
+### 1. Health Check
+GET http://localhost:3000/health
+
+### 2. Upload de arquivo
+# Use um arquivo real no seu sistema
+POST {{base_url}}/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="teste.txt"
+Content-Type: text/plain
+
+Conteúdo de teste para upload no MinIO
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### 3. Listar arquivos
+GET {{base_url}}/files
+
+### 4. Download de arquivo (stream direto)
+GET {{base_url}}/files/teste.txt
+
+### 5. Download com URL presignada
+GET {{base_url}}/files/teste.txt?mode=url&expires=3600
+
+### 6. Deletar arquivo
+DELETE {{base_url}}/files/teste.txt

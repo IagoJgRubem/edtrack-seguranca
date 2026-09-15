@@ -1,0 +1,92 @@
+{
+  "info": {
+    "name": "MinIO Storage API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Upload File",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": []
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/upload",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["upload"]
+        }
+      }
+    },
+    {
+      "name": "List Files",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/files",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["files"]
+        }
+      }
+    },
+    {
+      "name": "Download File",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/files/:filename",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["files", ":filename"],
+          "variable": [
+            {
+              "key": "filename",
+              "value": "teste.txt"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Presigned URL",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/files/:filename?mode=url",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["files", ":filename"],
+          "query": [
+            {
+              "key": "mode",
+              "value": "url"
+            }
+          ],
+          "variable": [
+            {
+              "key": "filename",
+              "value": "teste.txt"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

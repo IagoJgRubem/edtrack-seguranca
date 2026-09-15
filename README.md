@@ -184,7 +184,7 @@ lsof -i :3000
 ├── package.json
 ├── src/
 │   ├── server.js
-│   ├── config/minio.js
+https://github.com/IagoJgRubem/edtrack-seguranca/pull/2/conflict?name=README.md&ancestor_oid=3043bb4c68d24fd32982d7d4e478049a424a78d2&base_oid=7a206295e572603c7786d523b5bb639ea8986db5&head_oid=b1c19b1ff65f0741a5d76638ef54ce6e51a96558│   ├── config/minio.js
 │   ├── routes/files.js
 │   ├── controllers/filesController.js
 │   └── services/storageService.js

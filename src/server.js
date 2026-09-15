@@ -21,6 +21,7 @@ app.use((req, res, next) => {
 
 // Rotas da API
 app.use('/api', filesRoutes);
+app.use('/', filesRoutes); // alias: /upload, /files, /files/:name conforme especificação
 
 // Health check
 app.get('/health', (req, res) => {

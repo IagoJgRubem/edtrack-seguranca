@@ -6,7 +6,8 @@ const {
   PutObjectCommand, 
   GetObjectCommand, 
   ListObjectsV2Command,
-  DeleteObjectCommand 
+  DeleteObjectCommand,
+  HeadObjectCommand
 } = require('@aws-sdk/client-s3');
 const { getSignedUrl } = require('@aws-sdk/s3-request-presigner');
 const { s3Client, BUCKET_NAME } = require('../config/minio');
@@ -50,11 +51,15 @@ async function listFiles() {
     return [];
   }
 
-  return response.Contents.map(obj => ({
-    name: obj.Key,
-    size: obj.Size,
-    lastModified: obj.LastModified.toISOString(),
-    etag: obj.ETag,
+  return Promise.all(response.Contents.map(async (obj) => {
+    const head = await s3Client.send(new HeadObjectCommand({ Bucket: BUCKET_NAME, Key: obj.Key }));
+    return {
+      name: obj.Key,
+      size: obj.Size,
+      lastModified: obj.LastModified.toISOString(),
+      contentType: head.ContentType,
+      etag: obj.ETag,
+    };
   }));
 }
 

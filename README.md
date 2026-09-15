@@ -203,5 +203,12 @@ https://github.com/IagoJgRubem/edtrack-seguranca/pull/2/conflict?name=README.md&
 MIT
 
 ## 👥 Autores
+## 👥 Autores
 
+- **Iago Nunes** — [responsabilidade: ex., infraestrutura Docker/MinIO]
+- **Lucas Moura** — [responsabilidade: ex., API Node.js e endpoints]
+- [Integrante 3, se houver] — [responsabilidade]
+- [Integrante 4, se houver] — [responsabilidade]
+
+Desenvolvido como parte das notas das disciplinas de Devops e Auditoria e Segurança da Informação.
 Desenvolvido como parte da disciplina de Armazenamento em Nuvem.

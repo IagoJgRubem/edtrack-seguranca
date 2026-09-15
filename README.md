@@ -13,8 +13,8 @@ API de armazenamento de objetos usando **MinIO** e **Node.js** com Express. Esta
 ### 1. Clone o repositório
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
-cd minio-storage-api
+git clone https://github.com/IagoJgRubem/edtrack-seguranca.git
+cd edtrack-seguranca
 ```
 
 ### 2. Configure as variáveis de ambiente
